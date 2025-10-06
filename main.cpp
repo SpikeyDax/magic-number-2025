@@ -12,14 +12,23 @@ int main() {
     int magic = 0;
     magic = (rand() % 10) + 1; // methods <> function
     int guess;
-    cout << " What is your guess: ";
+    bool won = false;
+    for (int i = 0; i < 3; i++) {
+        cout << "Guess #" << (i + 1) << "What is your guess: ";
     cin >> guess;
     if (magic == guess) {
         cout << "Your are a winner" << endl;
+        won = true;
+        break;
     }else {
-        cout << "Loser!" <<endl;
-        cout << "The magic number" <<  " is " << magic << endl;
+
 
     }
+        if (!won)
+        cout << "Loser!" <<endl;
+
+
+    }
+    cout << "The magic number" <<  " is " << magic << endl;
         return 0;
 }
